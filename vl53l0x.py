@@ -86,7 +86,10 @@ while (1):
     #print "ambient count " + str(makeuint16(data[7], data[6]))
     #print "signal count " + str(makeuint16(data[9], data[8]))
     #		tmpuint16 = VL53L0X_MAKEUINT16(localBuffer[11], localBuffer[10]);
-    print "distance " + str(makeuint16(data[11], data[10]))
+
+    Answer = str(makeuint16(data[11], data[10]))
+    if (Answer != "20"):
+        print "distance " + Answer
 
     DeviceRangeStatusInternal = ((data[0] & 0x78) >> 3)
     #print DeviceRangeStatusInternal
